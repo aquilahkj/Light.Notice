@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5EEBA670-9444-4C49-8D0A-B78AF8F0BC21}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Light.Notice</RootNamespace>
+    <AssemblyName>Light.Notice</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Config\ConfigStatus.cs" />
+    <Compile Include="Config\EmailConfig.cs" />
+    <Compile Include="Config\IEmailConfig.cs" />
+    <Compile Include="Config\INoticeConfig.cs" />
+    <Compile Include="Config\INoticeSetting.cs" />
+    <Compile Include="Config\IReceiver.cs" />
+    <Compile Include="Config\IRemoteConfig.cs" />
+    <Compile Include="Config\NoticeConfig.cs" />
+    <Compile Include="Config\NoticeConfigCollection.cs" />
+    <Compile Include="Config\NoticeSetting.cs" />
+    <Compile Include="Config\Receiver.cs" />
+    <Compile Include="Config\ReceiverCollection.cs" />
+    <Compile Include="Config\RemoteConfig.cs" />
+    <Compile Include="NoticeManager.cs" />
+    <Compile Include="NoticeExecutor.cs" />
+    <Compile Include="EmailSender.cs" />
+    <Compile Include="RemoteSender.cs" />
+    <Compile Include="NoticeEventArgs.cs" />
+    <Compile Include="NoticeEventHandle.cs" />
+    <Compile Include="NoticeResult.cs" />
+    <Compile Include="NoticeData.cs" />
+    <Compile Include="NoticeDataType.cs" />
+    <Compile Include="FlagLimiter.cs" />
+    <Compile Include="FlagLimitStatus.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Config\" />
+  </ItemGroup>
+</Project>
